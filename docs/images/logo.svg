@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="140" viewBox="0 0 560 140" role="img" aria-label="dsh-wechat-one">
+  <title>dsh-wechat-one</title>
+  <defs>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16263f"/>
+      <stop offset="1" stop-color="#0f1b2d"/>
+    </linearGradient>
+  </defs>
+  <!-- 图标：对话气泡里的三条消息，放大镜锁定其中一条 -->
+  <rect x="10" y="10" width="120" height="120" rx="30" fill="url(#tile)"/>
+  <path d="M34 42 h62 a10 10 0 0 1 10 10 v30 a10 10 0 0 1 -10 10 h-34 l-16 13 v-13 h-12 a10 10 0 0 1 -10 -10 v-30 a10 10 0 0 1 10 -10 z"
+        fill="none" stroke="#14b8a6" stroke-width="6" stroke-linejoin="round"/>
+  <circle cx="48" cy="67" r="6" fill="#14b8a6" opacity="0.55"/>
+  <circle cx="65" cy="67" r="6" fill="#f59e0b"/>
+  <circle cx="82" cy="67" r="6" fill="#14b8a6" opacity="0.55"/>
+  <circle cx="65" cy="67" r="15" fill="none" stroke="#f59e0b" stroke-width="4"/>
+  <path d="M76 78 L92 94" stroke="#f59e0b" stroke-width="6" stroke-linecap="round"/>
+  <!-- 字标 -->
+  <g font-family="'Segoe UI', 'PingFang SC', 'Helvetica Neue', Arial, sans-serif">
+    <text x="156" y="78" font-size="44" font-weight="700" fill="#14b8a6">dsh-wechat-<tspan fill="#f59e0b">one</tspan></text>
+    <text x="158" y="110" font-size="17" letter-spacing="1.5" fill="#64748b">把聊天记录变成能检索、能引用的知识</text>
+  </g>
+</svg>

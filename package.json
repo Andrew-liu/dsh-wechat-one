@@ -1,7 +1,7 @@
 {
   "name": "dsh-wechat-one",
   "version": "0.1.0",
-  "description": "DeepSeek Harness 插件：本地微信聊天记录的主题检索（RAG）、精确检索与好友证据化人格报告。数据来自 WeinanHu/wechat-decrypt 生成的本地明文镜像，插件本身不含任何解密代码。",
+  "description": "DeepSeek Harness 插件：本地微信聊天记录的主题检索（RAG）、精确检索、好友证据化人格报告与群聊日报。数据来自 WeinanHu/wechat-decrypt 生成的本地明文镜像，插件本身不含任何解密代码。",
   "license": "MIT",
   "type": "module",
   "exports": {

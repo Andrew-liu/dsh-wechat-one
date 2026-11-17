@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" role="img" aria-label="好友人格报告">
+  <rect width="56" height="56" rx="14" fill="#0f1b2d"/>
+  <g fill="none" stroke="#14b8a6" stroke-width="3" stroke-linecap="round">
+    <circle cx="23" cy="21" r="7"/>
+    <path d="M11 42 c1.5 -8 6.5 -12 12 -12 s10.5 4 12 12"/>
+  </g>
+  <g stroke="#f59e0b" stroke-width="3" stroke-linecap="round">
+    <path d="M38 17 h8"/><path d="M38 24 h6"/>
+  </g>
+  <path d="M38 33 l3 3 l6 -7" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
