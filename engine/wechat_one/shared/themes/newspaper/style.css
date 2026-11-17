@@ -1,0 +1,21 @@
+/* 报纸：新闻纸底色、报头双线、黑底反白章节头、红色版号。 */
+body{background:#f2ede1;color:#1b1a17;font-family:"Noto Serif SC","Source Han Serif SC","Songti SC","SimSun",Georgia,serif}
+.mast{border-bottom:4px double #1b1a17;padding-bottom:14px}
+.mast-bar{border-top:3px solid #1b1a17;border-bottom:1px solid #1b1a17;padding:5px 0;font-size:11px;letter-spacing:.24em}
+.mast-kind{background:#b3261e;color:#f2ede1;padding:0 10px}
+.mast-title{font-weight:900;letter-spacing:.06em}
+.mast-lede{font-size:17px;font-style:italic}
+.note{border-top:3px solid #1b1a17;border-bottom:1px solid #1b1a17;padding:10px 0}
+.note-hd{display:inline-block;background:#1b1a17;color:#f2ede1;font-weight:900;font-size:12px;letter-spacing:.2em;padding:1px 8px;margin-bottom:6px}
+.sec{border-bottom:1px solid #1b1a17;padding-bottom:16px}
+.sec-hd{background:#1b1a17;color:#f2ede1;padding:8px 12px}
+.sec:nth-of-type(even) .sec-hd{background:transparent;color:#1b1a17;border-top:6px solid #1b1a17;border-bottom:1px solid #1b1a17;padding:8px 0}
+.sec-no{font:900 22px/1 Georgia,serif;color:#e8a29b}
+.sec:nth-of-type(even) .sec-no{color:#b3261e}
+.sec-title{letter-spacing:.12em}
+.card{border:1px solid #1b1a17;background:#f7f3ea}
+.item{border-bottom:1px dotted #8a8476}
+.item:last-child{border-bottom:0}
+.item-title::first-letter{font-size:22px;color:#b3261e}
+.quote{border-left:4px solid #b3261e;background:#f7f3ea;font-style:italic}
+.foot{border-top-color:#1b1a17}

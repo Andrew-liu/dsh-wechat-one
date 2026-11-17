@@ -1,0 +1,6 @@
+{
+  "name": "claude",
+  "label": "Claude 暖调",
+  "palette": {"bar": "#c96442", "bar_alt": "#e6c3ae", "axis": "#8a8578", "text": "#3d3929", "grid": "#e8e4d8"},
+  "vars": {"brand": "PERSONA PORTRAIT"}
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="generator" content="{{ generator }}">
+<meta name="robots" content="noindex,nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:">
+<title>{{ title }}</title>
+<style>{{ css | raw }}</style>
+</head>
+<body>
+<main class="page">
+  <header class="mast">
+    <div class="mast-bar">{{ theme.vars.brand }}</div>
+    <div><span class="mast-kind">好友人格画像</span></div>
+    <h1 class="mast-title">{{ name }}</h1>
+    {% if one_liner %}<p class="mast-lede">{{ one_liner }}</p>{% endif %}
+    <div class="mast-meta">{{ period }} · 共 {{ stats.total | num }} 条消息 · 生成于 {{ generated_at }}</div>
+  </header>
+
+  {% if summary %}
+  <section class="note">
+    <div class="note-hd">总览</div>
+    <div class="note-bd">{{ summary }}</div>
+  </section>
+  {% endif %}
+
+  <section class="sec sec-overview">
+    <div class="sec-hd"><span class="sec-title">数据概览</span><span class="sec-en">By the Numbers</span></div>
+    <div class="cards">
+      {% for card in cards %}
+      <div class="card"><div class="card-v">{{ card.value }}</div><div class="card-l">{{ card.label }}</div>{% if card.note %}<div class="card-n">{{ card.note }}</div>{% endif %}</div>
+      {% endfor %}
+    </div>
+    <div class="chart-box"><div class="chart-hd">对方 24 小时发言分布</div>{{ charts.hourly | raw }}</div>
+    {% if charts.monthly %}<div class="chart-box"><div class="chart-hd">按月消息量（对方）</div>{{ charts.monthly | raw }}</div>{% endif %}
+    {% if habits %}<p class="habits">{{ habits }}</p>{% endif %}
+  </section>
+
+  {% for sec in sections %}
+  {% if sec.items %}
+  <section class="sec sec-{{ sec.key }}">
+    <div class="sec-hd"><span class="sec-no">{{ loop.index | pad2 }}</span><span class="sec-title">{{ sec.label }}</span><span class="sec-count">{{ sec.items | length }} 条</span></div>
+    {% for item in sec.items %}
+    <article class="item">
+      <h3 class="item-title">{% if item.title %}{{ item.title }}{% else %}「{{ item.phrase }}」{% endif %}</h3>
+      {% if item.detail %}<p class="item-detail">{{ item.detail }}</p>{% endif %}
+      {% for q in item.quotes %}
+      <blockquote class="quote"><span class="quote-t">{{ q.text }}</span><span class="quote-m">— {{ q.sender }} · {{ q.time }} · <code>{{ q.msg_id }}</code></span></blockquote>
+      {% endfor %}
+      <div class="item-ev">依据 {{ item.evidence_count }} 条消息</div>
+    </article>
+    {% endfor %}
+  </section>
+  {% endif %}
+  {% endfor %}
+
+  {% if caveats %}
+  <section class="sec sec-caveats">
+    <div class="sec-hd"><span class="sec-title">局限与不确定</span></div>
+    <ul class="caveats">{% for c in caveats %}<li>{{ c }}</li>{% endfor %}</ul>
+  </section>
+  {% endif %}
+
+  <footer class="foot">
+    <p>{{ disclaimer }}</p>
+    <p>semantic_truth: not-verified · 证据已校验（msg_id 与逐字引文），但观点与解读未经人工核实。</p>
+  </footer>
+</main>
+</body>
+</html>

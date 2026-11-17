@@ -1,0 +1,13 @@
+- insert:
+    - id: dsh-wechat-one-core
+      name: 'dsh-wechat-one/core'
+      config:
+        confirmReads: true
+    - id: dsh-wechat-one-setup
+      name: 'dsh-wechat-one/setup'
+    - id: dsh-wechat-one-read
+      name: 'dsh-wechat-one/read'
+    - id: dsh-wechat-one-persona
+      name: 'dsh-wechat-one/persona'
+    - id: dsh-wechat-one-summary
+      name: 'dsh-wechat-one/summary'

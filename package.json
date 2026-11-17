@@ -1,0 +1,63 @@
+{
+  "name": "dsh-wechat-one",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness 插件：本地微信聊天记录的主题检索（RAG）、精确检索与好友证据化人格报告。数据来自 WeinanHu/wechat-decrypt 生成的本地明文镜像，插件本身不含任何解密代码。",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    "./core": "./components/core.js",
+    "./setup": "./components/setup.js",
+    "./read": "./components/read.js",
+    "./persona": "./components/persona.js",
+    "./summary": "./components/summary.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": ">=0.2.2-rc.1 <0.3.0",
+    "@deepseek-ai/schemastery": "^3.18.4"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    },
+    "@deepseek-ai/schemastery": {
+      "optional": true
+    }
+  },
+  "files": [
+    "components/",
+    "lib/",
+    "manifests/",
+    "engine/manifest.json",
+    "engine/wechat_one/**/*.py",
+    "engine/wechat_one/shared/themes/",
+    "cordis.patch.yml",
+    "README.md",
+    "PRIVACY.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "scripts": {
+    "test": "node --test tests/js/",
+    "test:python": "python -X utf8 -B -m unittest discover -s tests/python -t tests/python",
+    "test:all": "npm test && npm run test:python && python -X utf8 tools/privacy_check.py",
+    "manifest": "python -X utf8 tools/gen_manifest.py",
+    "privacy": "python -X utf8 tools/privacy_check.py"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "wechat",
+    "rag",
+    "local-first"
+  ]
+}

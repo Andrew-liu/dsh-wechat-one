@@ -1,0 +1,25 @@
+# 依赖与缓存
+node_modules/
+__pycache__/
+*.pyc
+.pytest_cache/
+.testhome/
+
+# 私有数据、镜像与密钥：任何情况下都不要提交
+.dsh-wechat-one/
+decrypted/
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite-*
+key_windows.txt
+all_keys.json
+secret.key
+
+# 本地开发工具与产物
+.agent/
+.vscode/
+.idea/
+*.tgz
+*.log

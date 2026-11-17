@@ -1,0 +1,69 @@
+{
+  "actions": {
+    "contacts": {
+      "kind": "read",
+      "timeout_ms": 20000,
+      "writes_index": false
+    },
+    "context": {
+      "kind": "read",
+      "timeout_ms": 20000,
+      "writes_index": false
+    },
+    "persona_prepare": {
+      "kind": "read",
+      "timeout_ms": 60000,
+      "writes_index": false
+    },
+    "persona_render": {
+      "kind": "write",
+      "timeout_ms": 60000,
+      "writes_index": false
+    },
+    "refresh": {
+      "kind": "write",
+      "timeout_ms": 1800000,
+      "writes_index": true
+    },
+    "search": {
+      "kind": "read",
+      "timeout_ms": 20000,
+      "writes_index": false
+    },
+    "setup": {
+      "kind": "write",
+      "timeout_ms": 1800000,
+      "writes_index": true
+    },
+    "status": {
+      "kind": "read",
+      "timeout_ms": 20000,
+      "writes_index": false
+    },
+    "summary_material": {
+      "kind": "read",
+      "timeout_ms": 20000,
+      "writes_index": false
+    },
+    "summary_pending": {
+      "kind": "read",
+      "timeout_ms": 20000,
+      "writes_index": false
+    },
+    "summary_prepare": {
+      "kind": "read",
+      "timeout_ms": 60000,
+      "writes_index": false
+    },
+    "summary_render": {
+      "kind": "write",
+      "timeout_ms": 60000,
+      "writes_index": false
+    },
+    "topic_search": {
+      "kind": "read",
+      "timeout_ms": 30000,
+      "writes_index": false
+    }
+  }
+}

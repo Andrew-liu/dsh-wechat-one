@@ -1,0 +1,6 @@
+{
+  "name": "newspaper",
+  "label": "报纸头版",
+  "palette": {"bar": "#1b1a17", "bar_alt": "#a9a294", "axis": "#4a463d", "text": "#1b1a17", "grid": "#d6cfbf"},
+  "vars": {"brand": "THE WECHAT TIMES · 人物专访"}
+}

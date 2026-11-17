@@ -1,0 +1,16 @@
+/* 暖调：米色纸张、白色章节卡、顶部章节色条，克制耐读。 */
+body{background:#f5f1e8;color:#3d3929;font-family:"Source Han Serif SC","Noto Serif SC",Georgia,"Songti SC",serif}
+.mast-bar{font:600 11px/1 ui-sans-serif,system-ui,sans-serif;letter-spacing:.3em;color:#c96442}
+.mast-kind{color:#8a8578}
+.mast-title{font-weight:700;border-bottom:2px solid #c96442;display:inline-block;padding-bottom:4px}
+.mast-lede{color:#5e5a4c}
+.note{background:#fff;border-radius:12px;padding:14px 18px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.note-hd{font-weight:700;color:#c96442;margin-bottom:4px}
+.sec{background:#fff;border-radius:14px;padding:16px 20px 18px;box-shadow:0 1px 3px rgba(0,0,0,.06);border-top:4px solid #c96442}
+.sec-no{font:700 14px/1 ui-sans-serif,system-ui,sans-serif;color:#c96442;background:#f4e3d9;border-radius:6px;padding:4px 6px}
+.card{background:#faf7f0;border-radius:10px}
+.card-v{color:#c96442}
+.item{border-bottom:1px solid #eee8db}
+.item:last-child{border-bottom:0}
+.quote{border-left:3px solid #e6c3ae;background:#faf7f0;border-radius:0 8px 8px 0}
+.foot{border-top-color:#d9d3c4;color:#8a8578}

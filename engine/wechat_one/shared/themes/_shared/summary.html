@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="generator" content="{{ generator }}">
+<meta name="robots" content="noindex,nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; img-src data:">
+<title>{{ title }}</title>
+<style>{{ css | raw }}</style>
+</head>
+<body>
+<main class="page">
+  <header class="mast">
+    <div class="mast-bar">THE WECHAT DIGEST · 聊天{{ kind }}</div>
+    <div><span class="mast-kind">{{ kind }} · {{ range }}</span></div>
+    <h1 class="mast-title">{{ label }}</h1>
+    {% if one_liner %}<p class="mast-lede">{{ one_liner }}{% if mood %}<span class="mood">{{ mood }}</span>{% endif %}</p>{% endif %}
+    <div class="mast-meta">生成于 {{ generated_at }}{% if stats_only %} · 统计版{% endif %}</div>
+  </header>
+
+  {% if editor_note %}
+  <section class="note">
+    <div class="note-hd">编者按</div>
+    <div class="note-bd">{{ editor_note }}</div>
+  </section>
+  {% endif %}
+  {% if warnings %}
+  <ul class="warns">{% for w in warnings %}<li>{{ w }}</li>{% endfor %}</ul>
+  {% endif %}
+
+  {% for sec in sections %}
+  {% if sec.items %}
+  <section class="sec sec-{{ sec.key }}">
+    <div class="sec-hd"><span class="sec-no">{{ loop.index | pad2 }}</span><span class="sec-title">{{ sec.label }}</span><span class="sec-count">{{ sec.items | length }} 条</span></div>
+    {% for item in sec.items %}
+    <article class="item">
+      {% if item.date %}<h3 class="item-title"><span class="tag">{{ item.date }}</span>{{ item.headline }}</h3>{% endif %}
+      {% if item.url %}<h3 class="item-title"><a href="{{ item.url }}" rel="noopener noreferrer">{{ item.title }}</a></h3>{% endif %}
+      {% if item.claim %}<h3 class="item-title">{% if item.stance_label %}<span class="tag tag-stance">{{ item.stance_label }}</span>{% endif %}{{ item.claim }}</h3>{% endif %}
+      {% if item.title %}{% if item.url %}{% else %}<h3 class="item-title">{{ item.title }}</h3>{% endif %}{% endif %}
+      <div class="item-meta">{% if item.chat %}<span class="tag tag-chat">{{ item.chat }}</span>{% endif %}{% if item.people %}<span>{{ item.people | join }}</span>{% endif %}{% if item.owner %}<span>负责：{{ item.owner }}</span>{% endif %}{% if item.due %}<span>时间：{{ item.due }}</span>{% endif %}{% if item.action %}<span>建议：{{ item.action }}</span>{% endif %}{% if item.sharers %}<span>{{ item.sharers }} 分享</span>{% endif %}</div>
+      {% if item.summary %}<p class="item-detail">{{ item.summary }}</p>{% endif %}
+      {% if item.detail %}<p class="item-detail">{{ item.detail }}</p>{% endif %}
+      {% if item.note %}<p class="item-detail">{{ item.note }}</p>{% endif %}
+      {% if item.points %}<ul class="points">{% for p in item.points %}<li>{{ p }}</li>{% endfor %}</ul>{% endif %}
+      {% for q in item.quotes %}
+      <blockquote class="quote"><span class="quote-t">{{ q.text }}</span><span class="quote-m">— {{ q.sender }} · {{ q.time }}{% if q.chat %} · {{ q.chat }}{% endif %} · <code>{{ q.msg_id }}</code></span></blockquote>
+      {% endfor %}
+      <div class="item-ev">依据 {{ item.evidence_count }} 条消息{% if item.when %} · 首条 {{ item.when }}{% endif %}</div>
+    </article>
+    {% endfor %}
+  </section>
+  {% endif %}
+  {% endfor %}
+
+  <section class="sec sec-overview">
+    <div class="sec-hd"><span class="sec-title">数据</span><span class="sec-en">By the Numbers</span></div>
+    <div class="cards">
+      {% for card in cards %}
+      <div class="card"><div class="card-v">{{ card.value }}</div><div class="card-l">{{ card.label }}</div>{% if card.note %}<div class="card-n">{{ card.note }}</div>{% endif %}</div>
+      {% endfor %}
+    </div>
+    <div class="chart-box"><div class="chart-hd">24 小时发言分布</div>{{ charts.hourly | raw }}</div>
+    {% if charts.daily %}<div class="chart-box"><div class="chart-hd">每日发言量</div>{{ charts.daily | raw }}</div>{% endif %}
+    {% if senders %}
+    <div class="chart-hd">发言最多</div>
+    <div class="rank">
+      {% for s in senders %}
+      <div class="rank-row"><span class="rank-name">{{ s.name }}</span><span class="rank-bar"><i style="width:{{ s.width }}%"></i></span><span class="rank-n">{{ s.messages }} · {{ s.share }}</span></div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if conversations %}
+    <div class="chart-hd">分会话</div>
+    <div class="rank">
+      {% for c in conversations %}
+      <div class="rank-row"><span class="rank-name">{{ c.name }}</span><span class="rank-n">{{ c.messages }} 条 · {{ c.senders }} 人 · {{ c.top_senders | join }}</span></div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </section>
+
+  <footer class="foot">
+    <p>{{ disclaimer }}</p>
+    <p>semantic_truth: {{ truth }}</p>
+  </footer>
+</main>
+</body>
+</html>
